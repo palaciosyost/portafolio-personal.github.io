@@ -1,0 +1,738 @@
+:root {
+    --color-texto: #fafafa;
+    --color-hover-enlaces: rgb(41, 255, 255);
+    --color-targeta: #00a5ec;
+    --colo-fondo-page: rgb(10, 10, 10);
+    --color-navbar-page: rgba(0, 0, 0, 0.785);
+    --border-color-experiencia : rgb(55, 203, 55);
+}
+
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    margin: 0px;
+    scroll-behavior: smooth;
+    background-color: var(--colo-fondo-page) !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: var(--color-texto) !important;
+}
+
+/* barra de navegacion */
+.navegador {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: var(--color-navbar-page);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 40px;
+    overflow-y: auto;
+    transition: all .2s ease-in-out;
+    transform: translateX(100000px);
+    z-index: 990;
+}
+
+.navegador img {
+    width: 200px;
+    margin-top: 30px;
+    border-top-right-radius: 50%;
+    border-radius: 10px;
+}
+
+/* enlaces de navegacion */
+.enlaces {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 13px;
+}
+
+.enlaces a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.enlaces a:last-child {
+    border: none;
+}
+
+.enlaces a:hover
+{
+    color: var(--color-hover-enlaces);
+    font-size: 21px;
+    text-decoration: underline;
+}
+.active{
+    color: var(--color-hover-enlaces) !important;
+    font-size: 18px !important;
+    text-decoration: underline !important;
+}
+/* boton hamburgesa */
+.hamburger {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 990;
+    width: 70px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* barra nav responsive movile */
+.response-nav {
+    transition: all .2s ease-in-out;
+    transform: translate(0px);
+}
+
+.seccion {
+    margin-bottom: 100px;
+}
+
+/* seccion de perfil */
+.fondo-perfil {
+    background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.879)), url(../img/fondo-perfil_20010967.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 110vh;
+    position: relative;
+    z-index: 970;
+}
+
+.fondo-perfil a {
+    margin-top: 40px;
+    text-decoration: none;
+    color: var(--color-hover-enlaces);
+    filter: drop-shadow(0px 6px 4px #064349);
+}
+
+.fondo-perfil a:hover {
+    text-decoration: underline;
+}
+
+.fondo-perfil svg {
+    position: absolute;
+    bottom: -2px;
+    z-index: 900;
+}
+
+.texto-perfil {
+    color: var(--color-texto);
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    padding-top: 100px;
+}
+
+.texto-perfil h1 {
+    font-size: 4.5rem;
+    padding-left: 10px;
+
+}
+
+.contenedor-perfil {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.perfil h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.img-perfil-seccion {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-perfil-seccion img {
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+.perfil p {
+    padding: 10px 10px;
+}
+
+.texto-perfil p {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    text-align: justify;
+    border-right: 0.15em solid var(--color-texto);
+    animation: typing 4s steps(45) 1s 1 normal both, blink 1s steps(1) infinite;
+}
+
+/* seccion de Habilidades */
+.lenguajes img {
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+}
+
+.targeta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 310px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: var(--color-targeta);
+    flex-flow: column;
+    filter: drop-shadow(0px 5px 10px #fafafa);
+}
+
+.lenguaje-html,
+.lenguaje-css,
+.lenguaje-js,
+.lenguaje-mysql,
+.lenguaje-python,
+.lenguaje-bootstrap,
+.lenguaje-php,
+.lenguaje-sass {
+    width: 100%;
+    height: 50%;
+    background-size: 130px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+}
+
+.lenguaje-html {
+    background-image: url(../img/lenguaje-html.png);
+    background-size: 100px;
+}
+
+.lenguaje-html:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-html2);
+}
+
+.lenguaje-css {
+    background-image: url(../img/lenguaje-css.png);
+}
+
+.lenguaje-css:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-css2);
+}
+
+.lenguaje-sass {
+    background-image: url(../img/sass-image.png);
+}
+
+.lenguaje-sass:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/sass.hover.jpeg);
+}
+
+.lenguaje-js {
+    background-image: url(../img/lenguaje-js.png);
+    background-size: 100px;
+}
+
+.lenguaje-js:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-js2);
+}
+
+.lenguaje-mysql {
+    background-image: url(../img/lenguaje-mysql.png);
+}
+
+.lenguaje-mysql:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-mysql2.png);
+}
+
+.lenguaje-php {
+    background-image: url(../img/lenguaje-php.png);
+}
+
+.lenguaje-php:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-php2.png);
+}
+
+.lenguaje-python {
+    background-image: url(../img/lenguaje-python.png);
+    background-size: 110px;
+}
+
+.lenguaje-python:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-python2);
+}
+
+.lenguaje-bootstrap {
+    background-image: url(../img/lenguaje-bootstrap.png);
+}
+
+.lenguaje-bootstrap:hover {
+    transition: all .5s ease-in-out;
+    transform: translateY(-20px);
+    background-size: contain;
+    background-image: url(../img/lenguaje-bootstrap2.png);
+}
+
+.texto-lenguaje {
+    width: 100%;
+    height: 50%;
+    background-color: #fafafad7;
+    color: black;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.texto-lenguaje p {
+    padding: 10px;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lenguajes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.titulo h1 {
+    font-size: 2.5rem;
+}
+
+.titulo {
+    margin-bottom: 50px;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 365px;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* seccion de EDUCACION */
+.contenedor-educacion {
+    overflow: hidden;
+}
+
+.carrusel {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 400px;
+}
+
+.info-carrusel {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.img-carrusel {
+    width: 20em;
+    height: 12em;
+}
+.info-carrusel img {
+    width: 100%;
+    height: 40%;
+    margin-bottom: -20px;
+}
+.img-3{
+    width: 200px;
+    height: 200px;
+}
+.info-carrusel img[alt="senati1.web"] {
+    width: 90%;
+    height: 40%;
+    z-index: 800;
+}
+
+.info-carrusel svg {
+    position: absolute;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    opacity: 0.6;
+}
+
+.info-carrusel-dia-2 {
+    background-image: url(../img/senati2.jpg);
+    background-size: 140% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.info-carrusel-dia-3 {
+    background-image: url(../img/senati3.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#svg {
+    position: absolute;
+    top: 0px;
+    height: auto;
+    width: auto;
+}
+
+.des-educacion {
+    margin: 0px;
+}
+
+.des-educacion h3 {
+    color: black;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.des-educacion p {
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    text-align: justify;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.contenedor-educacion {
+    margin-top: 20px;
+}
+
+/* seccion de experiencia */
+.hr {
+    height: 3px;
+    background-color: var(--color-hover-enlaces);
+    border:none;
+    overflow: hidden;
+}
+.img-ex{
+    width: 170px;
+    height: 170px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--color-texto);
+    border-radius:50%;
+    border: 10px solid var(--border-color-experiencia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+.img-ex::after{
+    content:'';
+    width: 130px;
+    height: 10px;
+    position: absolute;
+    bottom: -40px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #100f0f;
+}
+.img-ex::before{
+    content: '';
+    width: 100px;
+    height: 8px;
+    background-color: #100f0f;
+    position: absolute;
+    bottom: -40px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    filter: drop-shadow( 0px -12px 5px rgb(31, 152, 65));
+}
+.enlaces-ex{
+    margin-top: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 50% 50%;
+    gap: 20px;
+}
+.enlaces-ex a{
+    text-decoration: none;
+    color: var(--color-texto);
+}
+.enlaces-ex a:hover{
+    text-decoration: underline;
+    color: var(--color-hover-enlaces);
+}
+.img-ex img{
+    width: 150px;
+}
+.hr-prim {
+    height: 3px;
+    width: auto;
+    background-color: var(--color-hover-enlaces);
+    border:none;
+}
+.info-ex h1{
+    text-align: center;
+}
+.info-ex-laburo{
+    padding: 10px;
+}
+.info-ex-laburo p{
+    text-align: justify;
+    padding: 15px;
+}
+
+.info-ex table,
+.info-ex-laburo h3
+{
+    display: none;
+}
+.container-under h5{
+    text-decoration: underline;
+    color: var(--border-color-experiencia);
+}
+.container-under table tr:hover{
+    transition: all .2s ease;
+    background-color: var(--border-color-experiencia);
+}
+.info-ex table tr:hover {
+    transition: all .2s ease;
+    background-color:darkcyan;
+    color: var(--color-texto);
+}
+.info-ex table thead{
+    background-color: var(--color-texto);
+}
+.table-horario-movil {
+    width: 300px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+.table-horario-movil tr td,
+.table-horario-movil th{
+    padding: 10px;
+}
+/* configuracion para pantalla a mayor de 900px de tamaño */
+@media screen and (min-width:900px) {
+
+    /* barra de navegacion */
+    .navegador {
+        width: 100vw;
+        position: fixed;
+        height: 100px;
+        background-color: black;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        transform: translate(0px);
+        filter: drop-shadow(0px 0px 8px var(--color-targeta));
+    }
+
+    .navegador img {
+        width: 80px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    /* enlaces de navegacion */
+    .enlaces {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-flow: row;
+    }
+
+    .enlaces a {
+        font-size: 16px;
+        border-right: 2px solid var(--color-texto);
+        padding-right: 10px;
+    }
+
+    .enlaces a:hover {
+        font-size: 17px;
+    }
+    .enlaces a:last-child {
+        margin-right: 20px;
+    }
+
+    /* boton hamburgesa */
+    .hamburger {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* perfil seccion */
+    .fondo-perfil {
+        height: 120vh;
+        margin-top: 0px;
+        background-size: cover;
+    }
+
+    .texto-perfil h1 {
+        font-size: 5rem;
+    }
+
+    .texto-perfil a {
+        font-size: 20px;
+    }
+
+    .texto-perfil p {
+        font-size: 2em;
+    }
+
+    /* animacion en tamaño computadora */
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 605px;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    /* separacion de secciones */
+    .seccion {
+        margin-bottom: 100px;
+    }
+
+    .perfil h1 {
+        text-align: start;
+    }
+
+    .contenedor-perfil {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 100px;
+    }
+
+    .img-perfil-seccion {
+        margin: 0px;
+    }
+
+    /* EDUCACION */
+    .carrusel {
+        height: 80%;
+    }
+
+    .contenedor-educacion {
+        height: 600px;
+    }
+
+    .info-carrusel img[alt="senati1.web"] {
+        width: 100%;
+        height: 100%;
+    }
+
+    .des-educacion h3 {
+        font-size: 2.3rem;
+    }
+
+    .des-educacion p {
+        font-size: 1.5rem;
+    }
+    .img-carrusel{
+        width: 70em;
+        height: auto;
+    }
+    .info-carrusel svg {
+        display: none;
+    }
+    .info-carrusel {
+        display: flex;
+        flex-flow: row;
+        gap: 40px;
+        justify-content: space-evenly;
+    }
+    /* seccion de experiencia */
+    #informacion {
+        width: 60%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .experiencia {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 50px;
+    }
+    .enlaces-ex {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .contenedor-ex{
+        position: relative;
+        width: 26%;
+    }
+    .hr-prim{
+        width: 200px;
+        height: 3px ;
+        background-color: var(--color-hover-enlaces);
+    }
+    .hr{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 3px;
+        height: 100%;
+    }
+    .enlaces-ex a{
+        width: 200px;
+        display: flex;
+        flex-flow: row;
+        gap: 5px;
+    }
+    .info-ex table {
+        display: block;
+    }
+    .info-ex table tbody {
+        color: var(--color-texto);
+    }
+}
